@@ -1,3 +1,3 @@
-- Services added
+- Composer require psr/container
 
-- InvoiceServiceTest is written using Mocks
+- Simple container without autowiring implemented. It is statically set at App constructor.
