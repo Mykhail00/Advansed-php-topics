@@ -4,7 +4,7 @@ namespace Tests\Unit\Services;
 
 use App\Services\EmailService;
 use App\Services\InvoiceService;
-use App\Services\PaymentGatewayService;
+use App\Services\StripePayment;
 use App\Services\SalesTaxService;
 use PHPUnit\Framework\TestCase;
 
@@ -16,7 +16,7 @@ class InvoiceServiceTest extends TestCase
         // Create mock
         // Create Test Doubles
         $salesTaxServiceMock = $this->createMock(SalesTaxService::class);
-        $gatewayServiceMock = $this->createMock(PaymentGatewayService::class);
+        $gatewayServiceMock = $this->createMock(StripePayment::class);
         $emailServiceMock = $this->createMock(EmailService::class);
 
         //Stub charge method
@@ -44,7 +44,7 @@ class InvoiceServiceTest extends TestCase
     public function it_sends_receipt_email_when_invoice_is_processed(): void
     {
         $salesTaxServiceMock = $this->createMock(SalesTaxService::class);
-        $gatewayServiceMock = $this->createMock(PaymentGatewayService::class);
+        $gatewayServiceMock = $this->createMock(StripePayment::class);
         $emailServiceMock = $this->createMock(EmailService::class);
 
         $gatewayServiceMock->method('charge')->willReturn(true);

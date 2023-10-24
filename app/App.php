@@ -7,16 +7,26 @@ namespace App;
 use App\Exceptions\RouteNotFoundException;
 use App\Services\EmailService;
 use App\Services\InvoiceService;
-use App\Services\PaymentGatewayService;
+use App\Services\PaddlePayment;
+use App\Services\StripePayment;
+use App\Services\PaymentGatewayInterface;
 use App\Services\SalesTaxService;
 
 class App
 {
     private static DB $db;
 
-    public function __construct(protected Router $router, protected array $request, protected Config $config)
+    public function __construct(
+        protected Container $container,
+        protected Router $router,
+        protected array $request,
+        protected Config $config)
     {
         static::$db = new DB($config->db ?? []);
+
+        // Manual binding Interface to its implementation
+        $this->container->set(
+            PaymentGatewayInterface::class, PaddlePayment::class);
     }
 
     public static function db(): DB
