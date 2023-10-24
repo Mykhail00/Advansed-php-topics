@@ -16,7 +16,11 @@ class Container implements ContainerInterface
         if ($this->has($id)) {
             $entry = $this->entries[$id];
 
-            return $entry($this);
+            if (is_callable($entry)){
+                return $entry($this);
+            }
+
+            $id = $entry;
         }
 
         // Otherwise return method that tries to make autowiring
@@ -29,7 +33,7 @@ class Container implements ContainerInterface
     }
 
     // $concrete is a resolver function
-    public function set(string $id, callable $concrete): void
+    public function set(string $id, callable|string $concrete): void
     {
         $this->entries[$id] = $concrete;
     }
@@ -82,4 +86,6 @@ class Container implements ContainerInterface
 
         return $reflectionClass->newInstanceArgs($dependencies);
     }
+
+
 }
