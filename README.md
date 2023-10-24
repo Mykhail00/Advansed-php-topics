@@ -1,2 +1,3 @@
--- added interface support for container 
--- added Unit Tests for container 
+- lazyFetch method added to Model.php
+- Ticket model creates Generator object
+- Generator object is iterated over in GeneratorExampleController.php
