@@ -1,5 +1,2 @@
-- switched to php 8.1
-- new composer.lock generated with composer update
-- added support for routes registering with attributes (implemented inside Router.php)
-- attribute classes created
-- attributes added in controllers
+- Enums examples added withing Enum directory
+- Refactor route attributes to use enums instead of hardcoded request methods
