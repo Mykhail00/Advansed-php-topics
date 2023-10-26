@@ -10,6 +10,7 @@ use App\Attributes\Post;
 use App\Attributes\Put;
 use App\Attributes\Route;
 use App\Container;
+use App\Enums\HttpMethod;
 use App\Services\InvoiceService;
 use App\View;
 
@@ -20,7 +21,7 @@ class HomeController
     }
 
     #[Get('/')]
-    #[Get('/home')]
+    #[Get('/home', HttpMethod::Head)]
     public function index(): View
     {
         $this->invoiceService->process([], 25);
@@ -36,6 +37,5 @@ class HomeController
     #[Put('/update')]
     public function update()
     {
-
     }
 }
