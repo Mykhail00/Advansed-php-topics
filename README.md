@@ -1,2 +1,3 @@
-- Enums examples added withing Enum directory
-- Refactor route attributes to use enums instead of hardcoded request methods
+- symfony mailer package added via composer
+- new container with Mailhog created
+- simple mailer implemented (in UserController ) It sends email on register form submit

@@ -11,6 +11,7 @@ use App\Services\PaddlePayment;
 use App\Services\StripePayment;
 use App\Services\PaymentGatewayInterface;
 use App\Services\SalesTaxService;
+use Symfony\Component\Mailer\MailerInterface;
 
 class App
 {
@@ -24,7 +25,6 @@ class App
     {
         static::$db = new DB($config->db ?? []);
 
-        // Manual binding Interface to its implementation
         $this->container->set(
             PaymentGatewayInterface::class, PaddlePayment::class);
     }
