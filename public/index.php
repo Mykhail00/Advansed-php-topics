@@ -31,10 +31,6 @@ echo '<pre>';
 print_r($router->routes());
 echo '</pre>';
 
-$router
-    ->get('/', [HomeController::class, 'index'])
-    ->get('/examples/generator', [GeneratorExampleController::class, 'index']);
-
 (new App(
     $container,
     $router,
