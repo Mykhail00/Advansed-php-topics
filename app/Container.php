@@ -55,9 +55,9 @@ class Container implements ContainerInterface
             return new $id;
         }
         // 3. Inspect the constructor parameters(dependencies)
-        $parameters = $constructor->getParameters(); // return array of ReflectionParameter objects
+        $parameters = $constructor->getParameters();
 
-        if (! $parameters) { // if constructor is empty there are no dependencies
+        if (! $parameters) {
             return new $id;
         }
 
@@ -86,6 +86,4 @@ class Container implements ContainerInterface
 
         return $reflectionClass->newInstanceArgs($dependencies);
     }
-
-
 }

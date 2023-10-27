@@ -1,3 +1,4 @@
 - symfony mailer package added via composer
 - new container with Mailhog created
 - simple mailer implemented (in UserController ) It sends email on register form submit
+- UserController refactored to use dependency injection of CustomMailer 

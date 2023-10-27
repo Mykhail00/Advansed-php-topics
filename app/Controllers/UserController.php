@@ -7,12 +7,15 @@ namespace App\Controllers;
 use App\Attributes\Get;
 use App\Attributes\Post;
 use App\View;
-use Symfony\Component\Mailer\Mailer;
-use Symfony\Component\Mailer\Transport;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
 class UserController
 {
+    public function __construct(protected MailerInterface $mailer)
+    {
+
+    }
 
     #[Get('/user/create')]
     public function create(): View
@@ -38,7 +41,7 @@ Body;
         $html = <<<HTMLBody
 <h1 style="text-align: center; color: blue">Welcome</h1>
 Hello $firstname,
-<br/>
+<br/><br/>
 Thank you for signing up!
 HTMLBody;
 
@@ -50,12 +53,6 @@ HTMLBody;
             ->html($html)
             ->text($text);
 
-
-        $transport = Transport::fromDsn($_ENV['MAILER_DSN']);
-
-        $mailer = new Mailer($transport);
-
-        $mailer->send($email);
-
+        $this->mailer->send($email);
     }
 }
