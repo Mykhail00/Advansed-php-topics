@@ -1,4 +1,5 @@
-- symfony mailer package added via composer
-- new container with Mailhog created
-- simple mailer implemented (in UserController ) It sends email on register form submit
-- UserController refactored to use dependency injection of CustomMailer 
+- Modified userController to store email in DB
+- App.php refactored: boot method added
+- php script created to send queued emails 
+- Cron container created
+- crontab created to run php script every 2 min
