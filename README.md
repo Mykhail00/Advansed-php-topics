@@ -1,5 +1,3 @@
-- Modified userController to store email in DB
-- App.php refactored: boot method added
-- php script created to send queued emails 
-- Cron container created
-- crontab created to run php script every 2 min
+- Doctrine DBAL installed via composer
+- Refactor DB.php to use DBAL instead of using PDO directly
+- Refactor Invoice.php model to use queryBuilder
