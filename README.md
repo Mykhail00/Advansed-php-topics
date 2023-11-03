@@ -1,3 +1,4 @@
-- Doctrine DBAL installed via composer
-- Refactor DB.php to use DBAL instead of using PDO directly
-- Refactor Invoice.php model to use queryBuilder
+- Installed doctrine/orm and symfony/cash via composer
+- Created entities for Invoice and InvoiceItem in Entity directory
+- Mapped those Entities (OneToMany and ManyToOne)
+- Created doctrine_orm_example.php to practice ORM
