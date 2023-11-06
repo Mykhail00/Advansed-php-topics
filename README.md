@@ -1,4 +1,3 @@
-- Installed doctrine/orm and symfony/cash via composer
-- Created entities for Invoice and InvoiceItem in Entity directory
-- Mapped those Entities (OneToMany and ManyToOne)
-- Created doctrine_orm_example.php to practice ORM
+- created doctrine_orm_example to practice DQL
+- DQL with custom WHERE expression 
+- Invoice model modified to auto. set time on **PrePersist LifecycleEvent**
