@@ -1,3 +1,3 @@
-- created doctrine_orm_example to practice DQL
-- DQL with custom WHERE expression 
-- Invoice model modified to auto. set time on **PrePersist LifecycleEvent**
+- installed doctrine migrations lib via composer
+- created migrations config files (migration.php, cli-migrations.php)
+- created dir to store migrations files
