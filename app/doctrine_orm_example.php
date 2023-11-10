@@ -28,36 +28,21 @@ $entityManager = new EntityManager(
     DriverManager::getConnection($params),
     ORMSetup::createAttributeMetadataConfiguration([__DIR__ . '/Entity']));
 
-$queryBuilder = $entityManager->createQueryBuilder();
 
-// WHERE amount > :amount AND (status = :status OR created_at >= :date)
+$items = [['Item 1', 1, 15], ['Item 2', 3, 5.5], ['Item 3', 4, 3.75]];
 
-$query = $queryBuilder
-    ->select('i', 'it')
-    ->from(Invoice::class, 'i')
-    ->join('i.items', 'it')
-    ->where(
-        $queryBuilder->expr()->andX(
-            $queryBuilder->expr()->gt('i.amount', ':amount'),
-            $queryBuilder->expr()->orX(
-                $queryBuilder->expr()->eq('i.status', ':status'),
-                $queryBuilder->expr()->gte('i.createdAt',  ':date')
-            )
-        )
-    )
-    ->setParameter(':amount', 40)
-    ->setParameter(':status', InvoiceStatus::Paid->value)
-    ->setParameter(':date', '2023-11-03 00:00:00')
-    ->getQuery();
+$invoice = (new Invoice())
+    ->setAmount(45)
+    ->setInvoiceNumber('1')
+    ->setStatus(InvoiceStatus::Pending);
 
-$invoices = $query->getResult();
+foreach ($items as [$description, $quantity, $unitPrice]) {
+    $item = (new InvoiceItem())
+        ->setDescription($description)
+        ->setQuantity($quantity)
+        ->setUnitPrice($unitPrice);
 
-//$invoice = $query->getArrayResult();
-//var_dump($invoice);
-
-/** @var Invoice $invoice */
-foreach ($invoices as $invoice) {
-    echo $invoice->getCreatedAt()->format('d/m/Y g:ia')
-        . ', ' . $invoice->getAmount()
-        . ', ' . $invoice->getStatus()->toString() . PHP_EOL;
+    $invoice->addItem($item);
 }
+
+$entityManager->persist($invoice);
