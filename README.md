@@ -1,4 +1,3 @@
-- created **initDb()** with Eloquent Manager connection logic
-- modified Config class to Eloquent connection configs
-- replaced custom container with Laravel Service Container 
-- registered Event listener withing Invoice Model
+- created CurController for curl examples demonstration
+- examples of php curl functions
+- example email validation service API
