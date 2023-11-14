@@ -1,5 +1,4 @@
-- installed Eloquent via composer
-- created Capsule manager instance to use without Laravel
-- created models for tables and set relationships
-- examples of creating new instances of that models
-- examples of updating existing rows using models
+- created **initDb()** with Eloquent Manager connection logic
+- modified Config class to Eloquent connection configs
+- replaced custom container with Laravel Service Container 
+- registered Event listener withing Invoice Model
