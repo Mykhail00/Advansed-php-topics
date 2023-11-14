@@ -6,7 +6,6 @@ use Doctrine\DBAL\DriverManager;
 use Doctrine\Migrations\Configuration\Migration\PhpFile;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
-use Doctrine\ORM\Tools\Setup;
 use Doctrine\Migrations\Configuration\EntityManager\ExistingEntityManager;
 use Doctrine\Migrations\DependencyFactory;
 use Dotenv\Dotenv;
