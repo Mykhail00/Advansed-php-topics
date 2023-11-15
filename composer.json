@@ -10,7 +10,8 @@
         "doctrine/migrations": "^3.6",
         "illuminate/database": "^10.30",
         "illuminate/events": "^10.30",
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "guzzlehttp/guzzle": "^7.8"
     },
     "autoload": {
         "psr-4": {
