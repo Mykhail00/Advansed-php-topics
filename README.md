@@ -1,3 +1,5 @@
-- created CurController for curl examples demonstration
-- examples of php curl functions
-- example email validation service API
+- added Guzzle via composer
+- moved email validation API logic from **CurlController** to **EmailValidationService**
+- refactored **EmailValidationService** to use Guzzle Client instead of curl
+- added API retry logic with Guzzle handler middleware
+- added second email validation API and refactored to support multiple APIs
