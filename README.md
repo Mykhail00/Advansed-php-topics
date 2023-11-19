@@ -1,2 +1,3 @@
-- created DTO object to pass around data from API requests
-- modified API related services to return DTO instead of arrays
+- created example for package shipping calculation 
+- created Shipping Service for weight calculation based on value objects
+- created examples immutable VOs with validation logic inside 
