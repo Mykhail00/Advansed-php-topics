@@ -1,5 +1,2 @@
-- added Guzzle via composer
-- moved email validation API logic from **CurlController** to **EmailValidationService**
-- refactored **EmailValidationService** to use Guzzle Client instead of curl
-- added API retry logic with Guzzle handler middleware
-- added second email validation API and refactored to support multiple APIs
+- created DTO object to pass around data from API requests
+- modified API related services to return DTO instead of arrays
