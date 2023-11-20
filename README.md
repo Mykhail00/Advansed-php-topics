@@ -1,3 +1,6 @@
-- created example for package shipping calculation 
-- created Shipping Service for weight calculation based on value objects
-- created examples immutable VOs with validation logic inside 
+- installed twig via composer
+- configured twig Environment object in App.php
+- created .twig file 
+- refactored InvoiceController to render twig template
+- added twig Internalization extension for additional functionality
+- added ICU libraries and Internalization config in Dockerfile

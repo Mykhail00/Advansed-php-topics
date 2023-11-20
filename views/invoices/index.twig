@@ -35,14 +35,17 @@
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($invoices as $invoice): ?>
-        <tr>
-            <td><?= $invoice['invoice_number'] ?></td>
-            <td>$<?= number_format($invoice['amount'], 2) ?></td>
-            <td class="<?= \App\Enums\InvoiceStatus::tryFrom($invoice['status'])->color()->getClass() ?>">
-                <?= \App\Enums\InvoiceStatus::tryFrom($invoice['status'])->toString() ?>
-            </td>
-        </tr>
-    <?php endforeach ?>
+    {% for invoice in invoices %}
+    <tr>
+        <td>{{ invoice.invoice_number }}</td>
+        <td>{{ invoice.amount|format_currency('USD') }}</td>
+        <td>{{ invoice.status }}</td>
+        <td>
+            {{ invoice.due_date is empty ? 'N/A' : invoice.due_date|date('m/d/Y') }}
+        </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="4">No Invoices Found</td></tr>
+    {% endfor %}
     </tbody>
 </table>
