@@ -1,6 +1,3 @@
-- installed twig via composer
-- configured twig Environment object in App.php
-- created .twig file 
-- refactored InvoiceController to render twig template
-- added twig Internalization extension for additional functionality
-- added ICU libraries and Internalization config in Dockerfile
+- Xdebug installed via Docker 
+- Step Debugger configured in xdebug.ini (and copied into php.ini in the Dockerfile)
+- server name added to nginx.conf (for Xdebug being able to recognize incoming debug connection in IDE)
