@@ -1,3 +1,5 @@
-- Xdebug installed via Docker 
-- Step Debugger configured in xdebug.ini (and copied into php.ini in the Dockerfile)
-- server name added to nginx.conf (for Xdebug being able to recognize incoming debug connection in IDE)
+- installed Slim
+- installed Slim Twig component
+- deleted unused elements
+- deleted unused dependencies
+- refactored to Slim framework

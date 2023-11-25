@@ -1,7 +1,0 @@
-
-Fatal error: Uncaught PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for db failed: Name does not resolve in /var/www/app/DB.php:31
-Stack trace:
-#0 /var/www/app/App.php(38): App\DB->__construct(Array)
-#1 /var/www/scripts/email.php(13): App\App->boot()
-#2 {main}
-  thrown in /var/www/app/DB.php on line 31

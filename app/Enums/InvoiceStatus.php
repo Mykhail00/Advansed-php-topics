@@ -20,25 +20,4 @@ enum InvoiceStatus: int
             default => 'Pending'
         };
     }
-
-    public function color(): Color
-    {
-        return match($this) {
-            self::Paid   => Color::Green,
-            self::Failed => Color::Red,
-            self::Void   => Color::Gray,
-            default      => Color::Orange
-        };
-    }
-
-    public static function fromColor(Color $color): InvoiceStatus
-    {
-        return match($color) {
-            Color::Green => self::Paid,
-            Color::Gray  => self::Void,
-            Color::Red   => self::Failed,
-            default      => self::Pending
-        };
-    }
-
 }
