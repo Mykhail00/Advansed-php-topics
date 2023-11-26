@@ -1,3 +1,2 @@
-- PHP-DI installed via composer
-- Doctrine ORM EntityManager configured inside the container
-- refactored code, cleared unused elements
+- refactored index.php
+- container, container bindings, path constants, routes are moved into separate config files
