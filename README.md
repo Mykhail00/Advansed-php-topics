@@ -1,5 +1,3 @@
-- installed Slim
-- installed Slim Twig component
-- deleted unused elements
-- deleted unused dependencies
-- refactored to Slim framework
+- PHP-DI installed via composer
+- Doctrine ORM EntityManager configured inside the container
+- refactored code, cleared unused elements
