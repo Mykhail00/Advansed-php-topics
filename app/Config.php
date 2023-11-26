@@ -6,8 +6,7 @@ namespace App;
 
 /**
  * @property-read ?array $db
- * @property-read ?array $mailer
- * @property-read ?array $apiKeys
+ * @property-read ?string $environment
  */
 class Config
 {
@@ -23,6 +22,7 @@ class Config
                 'dbname' => $env['DB_DATABASE'],
                 'driver' => $env['DB_DRIVER'] ?? 'pdo_mysql',
             ],
+            'environment' => $env['APP_ENVIRONMENT'] ?? 'production'
         ];
     }
 
