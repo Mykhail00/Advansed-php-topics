@@ -1,2 +1,0 @@
-- refactored index.php
-- container, container bindings, path constants, routes are moved into separate config files
